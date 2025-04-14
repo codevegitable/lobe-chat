@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import BrandWatermark from '@/components/BrandWatermark';
 import AuthIcons from '@/components/NextAuth/AuthIcons';
-import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL } from '@/const/url';
+// import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL } from '@/const/url';
 import { useUserStore } from '@/store/user';
 
 const { Title, Paragraph } = Typography;
@@ -97,11 +97,11 @@ export default memo(() => {
     }
   };
 
-  const footerBtns = [
-    { href: DOCUMENTS_REFER_URL, id: 0, label: t('footerPageLink__help') },
-    { href: PRIVACY_URL, id: 1, label: t('footerPageLink__privacy') },
-    { href: TERMS_URL, id: 2, label: t('footerPageLink__terms') },
-  ];
+  // const footerBtns = [
+  //   { href: DOCUMENTS_REFER_URL, id: 0, label: t('footerPageLink__help') },
+  //   { href: PRIVACY_URL, id: 1, label: t('footerPageLink__privacy') },
+  //   { href: TERMS_URL, id: 2, label: t('footerPageLink__terms') },
+  // ];
 
   // 改一下应用名
   return (
@@ -114,7 +114,7 @@ export default memo(() => {
             <Title className={styles.title} level={4}>
               <div>
                 {/*<LobeChat size={48} />*/}
-                <img src="public/favicon.ico" />
+                <img alt={'icon'} src="/favicon.ico" />
               </div>
               {t('signIn.start.title', { applicationName: '暂时不知道' })}
             </Title>
@@ -145,15 +145,6 @@ export default memo(() => {
           <Col span={12}>
             <Flex justify="left" style={{ height: '100%' }}>
               <BrandWatermark />
-            </Flex>
-          </Col>
-          <Col offset={4} span={8}>
-            <Flex justify="right">
-              {footerBtns.map((btn) => (
-                <Button key={btn.id} onClick={() => router.push(btn.href)} size="small" type="text">
-                  {btn.label}
-                </Button>
-              ))}
             </Flex>
           </Col>
         </Row>
