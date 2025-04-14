@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import { enableAuth, enableClerk, enableNextAuth } from '@/const/auth';
 import { BRANDING_NAME } from '@/const/branding';
 import { UserStore } from '@/store/user';
-import { LobeUser } from '@/types/user';
+import { AIUser } from '@/types/user';
 
 const DEFAULT_USERNAME = BRANDING_NAME;
 
@@ -27,7 +27,7 @@ export const userProfileSelectors = {
   nickName,
   userAvatar: (s: UserStore): string => s.user?.avatar || '',
   userId: (s: UserStore) => s.user?.id,
-  userProfile: (s: UserStore): LobeUser | null | undefined => s.user,
+  userProfile: (s: UserStore): AIUser | null | undefined => s.user,
   username,
 };
 

@@ -1,7 +1,10 @@
 import { supportLocales } from '@/locales/resources';
 
-export const DEFAULT_LANG = 'en-US';
-export const LOBE_LOCALE_COOKIE = 'LOBE_LOCALE';
+// 更改默认语言
+export const DEFAULT_LANG = 'zh-CN';
+
+// 暂时更名，等我搞明白这个lobe的cookie和本地cookie有啥区别再改值（）
+export const LOCALE_COOKIE = 'LOBE_LOCALE';
 
 /**
  * Check if the language is supported

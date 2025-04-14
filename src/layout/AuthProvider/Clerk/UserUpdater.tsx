@@ -5,7 +5,7 @@ import { memo } from 'react';
 import { createStoreUpdater } from 'zustand-utils';
 
 import { useUserStore } from '@/store/user';
-import { LobeUser } from '@/types/user';
+import { AIUser } from '@/types/user';
 
 // update the user data into the context
 const UserUpdater = memo(() => {
@@ -15,17 +15,17 @@ const UserUpdater = memo(() => {
 
   const useStoreUpdater = createStoreUpdater(useUserStore);
 
-  const lobeUser = {
+  const aiUser = {
     avatar: user?.imageUrl,
     firstName: user?.firstName,
     fullName: user?.fullName,
     id: user?.id,
     latestName: user?.lastName,
     username: user?.username,
-  } as LobeUser;
+  } as AIUser;
 
   useStoreUpdater('isLoaded', isLoaded);
-  useStoreUpdater('user', lobeUser);
+  useStoreUpdater('user', aiUser);
   useStoreUpdater('isSignedIn', isSignedIn);
 
   useStoreUpdater('clerkUser', user);

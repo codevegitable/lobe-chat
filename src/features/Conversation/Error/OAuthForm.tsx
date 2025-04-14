@@ -37,7 +37,7 @@ const OAuthForm = memo<{ id: string }>(({ id }) => {
   return (
     <Center gap={16} style={{ maxWidth: 300 }}>
       <FormAction
-        avatar={isOAuthLoggedIn ? '✅' : '🕵️‍♂️'}
+        avatar={isOAuthLoggedIn ? '✅' : '❎️'}
         description={
           isOAuthLoggedIn
             ? `${t('unlock.oauth.welcome')} ${user?.fullName || ''}`

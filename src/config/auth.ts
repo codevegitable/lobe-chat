@@ -207,6 +207,15 @@ export const getAuthConfig = () => {
 
       // Casdoor
       CASDOOR_WEBHOOK_SECRET: z.string().optional(),
+
+      // Okta
+      OKTA_CLIENT_ID: z.string().optional(),
+      OKTA_CLIENT_SECRET: z.string().optional(),
+      OKTA_ISSUER: z.string().optional(),
+
+      // WeChat
+      WECHAT_CLIENT_ID: z.string().optional(),
+      WECHAT_CLIENT_SECRET: z.string().optional(),
     },
 
     runtimeEnv: {
@@ -228,8 +237,8 @@ export const getAuthConfig = () => {
       AUTH0_ISSUER: process.env.AUTH0_ISSUER,
 
       // Github
-      GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-      GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+      GITHUB_CLIENT_ID: process.env.AUTH_GITHUB_SECRET,
+      GITHUB_CLIENT_SECRET: process.env.AUTH_GITHUB_SECRET,
 
       // Azure AD
       AZURE_AD_CLIENT_ID: process.env.AZURE_AD_CLIENT_ID,
@@ -269,6 +278,15 @@ export const getAuthConfig = () => {
 
       // Casdoor
       CASDOOR_WEBHOOK_SECRET: process.env.CASDOOR_WEBHOOK_SECRET,
+
+      // Okta
+      OKTA_CLIENT_ID: process.env.OKTA_CLIENT_ID,
+      OKTA_CLIENT_SECRET: process.env.OKTA_CLIENT_SECRET,
+      OKTA_ISSUER: process.env.OKTA_ISSUER,
+
+      // WeChat
+      WECHAT_CLIENT_ID: process.env.WECHAT_CLIENT_ID,
+      WECHAT_CLIENT_SECRET: process.env.WECHAT_CLIENT_SECRET,
     },
   });
 };

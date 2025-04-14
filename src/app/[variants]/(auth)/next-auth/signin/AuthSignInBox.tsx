@@ -103,6 +103,7 @@ export default memo(() => {
     { href: TERMS_URL, id: 2, label: t('footerPageLink__terms') },
   ];
 
+  // 改一下应用名
   return (
     <div className={styles.container}>
       <div className={styles.contentCard}>
@@ -114,7 +115,7 @@ export default memo(() => {
               <div>
                 <LobeChat size={48} />
               </div>
-              {t('signIn.start.title', { applicationName: 'LobeChat' })}
+              {t('signIn.start.title', { applicationName: '暂时不知道' })}
             </Title>
             <Paragraph className={styles.description}>{t('signIn.start.subtitle')}</Paragraph>
           </div>

@@ -7,7 +7,7 @@ import {
   UserResource,
 } from '@clerk/types';
 
-import { LobeUser } from '@/types/user';
+import { AIUser } from '@/types/user';
 
 export interface UserAuthState {
   clerkOpenUserProfile?: (props?: UserProfileProps) => void;
@@ -22,7 +22,7 @@ export interface UserAuthState {
   nextSession?: Session;
   nextUser?: User;
   oAuthSSOProviders?: string[];
-  user?: LobeUser;
+  user?: AIUser;
 }
 
 export const initialAuthState: UserAuthState = {};

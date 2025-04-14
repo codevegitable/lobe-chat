@@ -15,7 +15,8 @@ describe('parseBrowserLanguage', () => {
   describe('when DEFAULT_LANG is en-US', () => {
     it('should return en-US for empty accept-language header', () => {
       const headers = createHeaders();
-      expect(parseBrowserLanguage(headers)).toBe('en-US');
+      // 更改测试，默认为中文
+      expect(parseBrowserLanguage(headers)).toBe('zh-CN');
     });
 
     it('should return en-US for English language preference', () => {

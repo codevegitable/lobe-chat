@@ -1,7 +1,9 @@
+// robots.txt，指定哪些站点可以爬取，哪些不能
+
 import { MetadataRoute } from 'next';
 
 import { sitemapModule } from '@/server/sitemap';
-import { getCanonicalUrl } from '@/server/utils/url';
+import { getCanonicalUrl } from '@/server/utils/url'; // url join
 
 const robots = (): MetadataRoute.Robots => {
   return {

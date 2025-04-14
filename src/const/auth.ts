@@ -1,5 +1,7 @@
 import { authEnv } from '@/config/auth';
 
+// 设置登陆方式以及认证
+
 export const enableClerk = authEnv.NEXT_PUBLIC_ENABLE_CLERK_AUTH;
 export const enableNextAuth = authEnv.NEXT_PUBLIC_ENABLE_NEXT_AUTH;
 export const enableAuth = enableClerk || enableNextAuth || false;

@@ -1,7 +1,7 @@
 import { diffChars } from 'diff';
 import { LangfuseTraceClient } from 'langfuse-core';
 
-import { TraceEventType } from '@/const/trace';
+import { TraceEventType, TraceNameMap } from '@/const/trace';
 import {
   TraceEventBasePayload,
   TraceEventCopyMessage,
@@ -119,7 +119,8 @@ export class TraceEventClient {
     this._trace.update({
       output: next,
       // TODO: add tag when supported
-      // tags: [TraceNameMap.UserEvents]
+      // 修改：增加了原来的tag属性
+      tags: [TraceNameMap.UserEvents],
     });
 
     // score the observation if there is an id

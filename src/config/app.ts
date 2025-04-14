@@ -23,6 +23,7 @@ if (typeof window === 'undefined' && isServerMode && !APP_URL) {
   throw new Error('`APP_URL` is required in server mode');
 }
 
+// 这里可能要改一下，防止一些版权问题（）
 const ASSISTANT_INDEX_URL = 'https://registry.npmmirror.com/@lobehub/agents-index/v1/files/public';
 
 const PLUGINS_INDEX_URL = 'https://chat-plugins.lobehub.com';
@@ -80,7 +81,7 @@ export const getAppConfig = () => {
 
       VERCEL_EDGE_CONFIG: process.env.VERCEL_EDGE_CONFIG,
 
-      APP_URL,
+      APP_URL: APP_URL,
       MIDDLEWARE_REWRITE_THROUGH_LOCAL: process.env.MIDDLEWARE_REWRITE_THROUGH_LOCAL === '1',
 
       CUSTOM_FONT_FAMILY: process.env.CUSTOM_FONT_FAMILY,

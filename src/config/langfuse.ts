@@ -10,7 +10,6 @@ export const getLangfuseConfig = () => {
       LANGFUSE_PUBLIC_KEY: process.env.LANGFUSE_PUBLIC_KEY || '',
       LANGFUSE_HOST: process.env.LANGFUSE_HOST || 'https://cloud.langfuse.com',
     },
-
     server: {
       ENABLE_LANGFUSE: z.boolean(),
       LANGFUSE_SECRET_KEY: z.string().optional(),

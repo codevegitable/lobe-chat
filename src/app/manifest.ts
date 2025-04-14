@@ -6,6 +6,7 @@ import { manifestModule } from '@/server/manifest';
 
 const manifest = (): MetadataRoute.Manifest | any => {
   return manifestModule.generate({
+    // 这里可以改一下介绍和图片
     description: `${BRANDING_NAME} brings you the best UI experience for ChatGPT, Claude, Gemini, and OLLaMA.`,
     icons: [
       {
@@ -33,48 +34,49 @@ const manifest = (): MetadataRoute.Manifest | any => {
     name: BRANDING_NAME,
     screenshots: BRANDING_LOGO_URL
       ? []
-      : [
-          {
-            form_factor: 'narrow',
-            url: '/screenshots/shot-1.mobile.png',
-          },
-          {
-            form_factor: 'narrow',
-            url: '/screenshots/shot-2.mobile.png',
-          },
-          {
-            form_factor: 'narrow',
-            url: '/screenshots/shot-3.mobile.png',
-          },
-          {
-            form_factor: 'narrow',
-            url: '/screenshots/shot-4.mobile.png',
-          },
-          {
-            form_factor: 'narrow',
-            url: '/screenshots/shot-5.mobile.png',
-          },
-          {
-            form_factor: 'wide',
-            url: '/screenshots/shot-1.desktop.png',
-          },
-          {
-            form_factor: 'wide',
-            url: '/screenshots/shot-2.desktop.png',
-          },
-          {
-            form_factor: 'wide',
-            url: '/screenshots/shot-3.desktop.png',
-          },
-          {
-            form_factor: 'wide',
-            url: '/screenshots/shot-4.desktop.png',
-          },
-          {
-            form_factor: 'wide',
-            url: '/screenshots/shot-5.desktop.png',
-          },
-        ],
+      : []
+      // : [
+      //     {
+      //       form_factor: 'narrow',
+      //       url: '/screenshots/shot-1.mobile.png',
+      //     },
+      //     {
+      //       form_factor: 'narrow',
+      //       url: '/screenshots/shot-2.mobile.png',
+      //     },
+      //     {
+      //       form_factor: 'narrow',
+      //       url: '/screenshots/shot-3.mobile.png',
+      //     },
+      //     {
+      //       form_factor: 'narrow',
+      //       url: '/screenshots/shot-4.mobile.png',
+      //     },
+      //     {
+      //       form_factor: 'narrow',
+      //       url: '/screenshots/shot-5.mobile.png',
+      //     },
+      //     {
+      //       form_factor: 'wide',
+      //       url: '/screenshots/shot-1.desktop.png',
+      //     },
+      //     {
+      //       form_factor: 'wide',
+      //       url: '/screenshots/shot-2.desktop.png',
+      //     },
+      //     {
+      //       form_factor: 'wide',
+      //       url: '/screenshots/shot-3.desktop.png',
+      //     },
+      //     {
+      //       form_factor: 'wide',
+      //       url: '/screenshots/shot-4.desktop.png',
+      //     },
+      //     {
+      //       form_factor: 'wide',
+      //       url: '/screenshots/shot-5.desktop.png',
+      //     },
+      //   ],
   });
 };
 

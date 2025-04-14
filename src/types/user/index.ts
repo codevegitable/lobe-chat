@@ -4,7 +4,8 @@ import { z } from 'zod';
 import { TopicDisplayMode } from '@/types/topic';
 import { UserSettings } from '@/types/user/settings';
 
-export interface LobeUser {
+// 仅更名
+export interface AIUser {
   avatar?: string;
   email?: string | null;
   firstName?: string | null;

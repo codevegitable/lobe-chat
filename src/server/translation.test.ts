@@ -4,7 +4,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { DEFAULT_LANG, LOBE_LOCALE_COOKIE } from '@/const/locale';
+import { DEFAULT_LANG, LOCALE_COOKIE } from '@/const/locale';
 import { normalizeLocale } from '@/locales/resources';
 import * as env from '@/utils/env';
 
@@ -26,7 +26,7 @@ vi.mock('node:path', () => ({
 
 vi.mock('@/const/locale', () => ({
   DEFAULT_LANG: 'en-US',
-  LOBE_LOCALE_COOKIE: 'LOBE_LOCALE',
+  LOCALE_COOKIE: 'LOCALE',
 }));
 
 vi.mock('@/locales/resources', () => ({

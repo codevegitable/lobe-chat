@@ -5,7 +5,7 @@ import { memo } from 'react';
 import { createStoreUpdater } from 'zustand-utils';
 
 import { useUserStore } from '@/store/user';
-import { LobeUser } from '@/types/user';
+import { AIUser } from '@/types/user';
 
 // update the user data into the context
 const UserUpdater = memo(() => {
@@ -22,7 +22,7 @@ const UserUpdater = memo(() => {
     email: nextUser?.email,
     fullName: nextUser?.name,
     id: nextUser?.id,
-  } as LobeUser;
+  } as AIUser;
 
   useStoreUpdater('isLoaded', isLoaded);
   useStoreUpdater('user', lobeUser);
