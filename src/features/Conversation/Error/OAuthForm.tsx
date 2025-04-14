@@ -1,6 +1,6 @@
-import { Icon } from '@lobehub/ui';
+//import { Icon } from '@lobehub/ui';
 import { App, Button } from 'antd';
-import { ScanFace } from 'lucide-react';
+//import { ScanFace } from 'lucide-react';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
@@ -48,7 +48,7 @@ const OAuthForm = memo<{ id: string }>(({ id }) => {
         {isOAuthLoggedIn ? (
           <Button
             block
-            icon={<Icon icon={ScanFace} />}
+            // icon={<Icon icon={ScanFace} />}
             onClick={handleSignOut}
             style={{ marginTop: 8 }}
           >
@@ -57,7 +57,7 @@ const OAuthForm = memo<{ id: string }>(({ id }) => {
         ) : (
           <Button
             block
-            icon={<Icon icon={ScanFace} />}
+            // icon={<Icon icon={ScanFace} />}
             loading={status === 'loading'}
             onClick={() => signIn()}
             style={{ marginTop: 8 }}

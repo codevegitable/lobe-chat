@@ -3,7 +3,7 @@ import { getAuth } from '@clerk/nextjs/server';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { checkAuthMethod } from '@/app/(backend)/middleware/auth/utils';
-import { LOBE_CHAT_AUTH_HEADER, OAUTH_AUTHORIZED } from '@/const/auth';
+import { AI_AUTH_HEADER, OAUTH_AUTHORIZED } from '@/const/auth';
 import { AgentRuntime, LobeRuntimeAI } from '@/libs/agent-runtime';
 import { ChatErrorType } from '@/types/fetch';
 import { getJWTPayload } from '@/utils/server/jwt';
@@ -41,7 +41,7 @@ let request: Request;
 beforeEach(() => {
   request = new Request(new URL('https://test.com'), {
     headers: {
-      [LOBE_CHAT_AUTH_HEADER]: 'Bearer some-valid-token',
+      [AI_AUTH_HEADER]: 'Bearer some-valid-token',
       [OAUTH_AUTHORIZED]: 'true',
     },
     method: 'POST',
@@ -125,7 +125,7 @@ describe('POST handler', () => {
         method: 'POST',
         body: JSON.stringify({ model: 'test-model' }),
         headers: {
-          [LOBE_CHAT_AUTH_HEADER]: 'some-valid-token',
+          [AI_AUTH_HEADER]: 'some-valid-token',
           [OAUTH_AUTHORIZED]: '1',
         },
       });
@@ -169,7 +169,7 @@ describe('POST handler', () => {
       const mockParams = Promise.resolve({ provider: 'test-provider' });
       const mockChatPayload = { message: 'Hello, world!' };
       request = new Request(new URL('https://test.com'), {
-        headers: { [LOBE_CHAT_AUTH_HEADER]: 'Bearer some-valid-token' },
+        headers: { [AI_AUTH_HEADER]: 'Bearer some-valid-token' },
         method: 'POST',
         body: JSON.stringify(mockChatPayload),
       });
@@ -198,7 +198,7 @@ describe('POST handler', () => {
       const mockParams = Promise.resolve({ provider: 'test-provider' });
       const mockChatPayload = { message: 'Hello, world!' };
       request = new Request(new URL('https://test.com'), {
-        headers: { [LOBE_CHAT_AUTH_HEADER]: 'Bearer some-valid-token' },
+        headers: { [AI_AUTH_HEADER]: 'Bearer some-valid-token' },
         method: 'POST',
         body: JSON.stringify(mockChatPayload),
       });

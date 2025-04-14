@@ -4,7 +4,7 @@ import urlJoin from 'url-join';
 
 import { appEnv } from '@/config/app';
 import { serverDBEnv } from '@/config/db';
-import { JWTPayload, LOBE_CHAT_AUTH_HEADER } from '@/const/auth';
+import { AI_AUTH_HEADER, JWTPayload } from '@/const/auth';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
 
 import type { AsyncRouter } from './index';
@@ -12,8 +12,8 @@ import type { AsyncRouter } from './index';
 export const createAsyncServerClient = async (userId: string, payload: JWTPayload) => {
   const gateKeeper = await KeyVaultsGateKeeper.initWithEnvKey();
   const headers: Record<string, string> = {
+    [AI_AUTH_HEADER]: await gateKeeper.encrypt(JSON.stringify({ payload, userId })),
     Authorization: `Bearer ${serverDBEnv.KEY_VAULTS_SECRET}`,
-    [LOBE_CHAT_AUTH_HEADER]: await gateKeeper.encrypt(JSON.stringify({ payload, userId })),
   };
 
   if (process.env.VERCEL_AUTOMATION_BYPASS_SECRET) {

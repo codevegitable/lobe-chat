@@ -1,7 +1,7 @@
 import { AuthObject } from '@clerk/backend';
 import { NextRequest } from 'next/server';
 
-import { JWTPayload, LOBE_CHAT_AUTH_HEADER, OAUTH_AUTHORIZED, enableClerk } from '@/const/auth';
+import { AI_AUTH_HEADER, JWTPayload, OAUTH_AUTHORIZED, enableClerk } from '@/const/auth';
 import { AgentRuntime, AgentRuntimeError, ChatCompletionErrorPayload } from '@/libs/agent-runtime';
 import { ClerkAuth } from '@/libs/clerk-auth';
 import { ChatErrorType } from '@/types/fetch';
@@ -33,7 +33,7 @@ export const checkAuth =
 
     try {
       // get Authorization from header
-      const authorization = req.headers.get(LOBE_CHAT_AUTH_HEADER);
+      const authorization = req.headers.get(AI_AUTH_HEADER);
       const oauthAuthorized = !!req.headers.get(OAUTH_AUTHORIZED);
 
       if (!authorization) throw AgentRuntimeError.createError(ChatErrorType.Unauthorized);

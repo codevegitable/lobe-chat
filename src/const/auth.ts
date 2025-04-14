@@ -6,7 +6,8 @@ export const enableClerk = authEnv.NEXT_PUBLIC_ENABLE_CLERK_AUTH;
 export const enableNextAuth = authEnv.NEXT_PUBLIC_ENABLE_NEXT_AUTH;
 export const enableAuth = enableClerk || enableNextAuth || false;
 
-export const LOBE_CHAT_AUTH_HEADER = 'X-lobe-chat-auth';
+// 更名
+export const AI_AUTH_HEADER = 'X-ai-auth';
 
 export const OAUTH_AUTHORIZED = 'X-oauth-authorized';
 
